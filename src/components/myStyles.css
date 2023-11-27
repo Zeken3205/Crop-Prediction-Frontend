@@ -1,0 +1,164 @@
+/* Style the container to set its background color */
+.green-stripe-container {
+    background-color: #C1DABB;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.greenbg {
+    background-color: #C1DABB;
+}
+
+.farming-animation-wrapper svg {
+    width: 600px !important;
+    /* adjust as needed */
+    height: auto !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 20px;
+    padding-top: 20px
+}
+
+.white-stripe-container {
+    background-color: #ffff;
+    /* Set your desired background color */
+    text-align: center;
+    /* Center the content within the container, if needed */
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* Vertically align content in the middle */
+}
+
+.fruitbasketanimation-wrapper {
+    width: 450px !important;
+    /* adjust as needed */
+    height: auto !important;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 60px;
+    /* Add some right margin to separate it from the text */
+}
+
+.pepermint-stripe-container {
+    background-color: #D7E6D1;
+    /* Set your desired background color */
+    text-align: center;
+    /* Center the content within the container, if needed */
+}
+
+.orange-stripe-container {
+    background-color: #FC9A0D;
+    /* Set your desired background color */
+    text-align: center;
+    /* Center the content within the container, if needed */
+}
+
+.android-green-stripe-container {
+    background-color: #A1CA40;
+    /* Set your desired background color */
+    text-align: center;
+    /* Center the content within the container, if needed */
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card:hover svg {
+    scale: 0;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.feed-form {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.feed-form input {
+    height: 54px;
+    border-radius: 5px;
+    background: white;
+    margin-bottom: 15px;
+    border: none;
+    padding: 0 20px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #4B4B4B;
+}
+
+.button_submit:hover,
+.feed-form input:hover {
+    transform: scale(1.009);
+    box-shadow: 0px 0px 3px 0px #212529;
+}
+
+.button_submit {
+    width: 100%;
+    height: 54px;
+    font-size: 14px;
+    color: white;
+    background: red;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+}
