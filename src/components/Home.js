@@ -39,13 +39,10 @@ function Home() {
     }
 
 
-
-
-
     const handleSmartFarm = () => {
 
         if (logincontext.logincheck)
-            navigate('/smartfarm')
+            navigate('/soilprofile')
         else {
             setwheretogo("/smartfarm")
             setShowLogin(!showLogin);

@@ -45,7 +45,6 @@ function Signup() {
 
     return (
         <div className="bg-[#C1DABB] flex flex-col items-center justify-center h-screen">
-            <div className='blurred h-screen'></div>
             <div className='absolute z-10'>
                 <form>
                     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">

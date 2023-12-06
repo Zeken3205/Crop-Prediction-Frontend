@@ -7,18 +7,23 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Signup from './components/Signup';
 import LoginState from './Context/LoginState';
 import SmartFarm from "./components/SmartFarm"
+import Soilprofiles from './components/Soilprofiles';
+import Profilestate from './Context/Profilestate';
 function App() {
   return (
     <BrowserRouter>
       <LoginState>
-        <Navbar />
+        <Profilestate>
+          <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/smartfarm" element={<SmartFarm />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/soilprofile" element={<Soilprofiles />} />
+            <Route path="/smartfarm" element={<SmartFarm />} />
+          </Routes>
+        </Profilestate>
       </LoginState>
     </BrowserRouter>
   );
