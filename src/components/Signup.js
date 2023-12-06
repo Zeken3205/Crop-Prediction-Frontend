@@ -24,7 +24,7 @@ function Signup() {
         if (json.success) {
             //Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
-            logincontext.setlogin(true);
+            logincontext.setlogincheck(true);
             navigate("/");
         }
         else {
@@ -44,8 +44,9 @@ function Signup() {
 
 
     return (
-        <div className="bg-[#C1DABB]">
-            <div >
+        <div className="bg-[#C1DABB] flex flex-col items-center justify-center h-screen">
+            <div className='blurred h-screen'></div>
+            <div className='absolute z-10'>
                 <form>
                     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
                         <div className="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
