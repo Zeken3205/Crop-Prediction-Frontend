@@ -58,6 +58,7 @@
     transition: transform 0.25s ease-out;
 }
 
+
 .card1:hover:before {
     transform: scale(21);
 }
@@ -72,7 +73,9 @@
     color: #fff;
 }
 
-.card2 {
+
+
+/* .card2 {
     display: block;
     top: 0px;
     position: relative;
@@ -186,12 +189,25 @@
 
 .card4 h3 {
     margin-top: 8px;
-}
+} */
 
-.card4:hover .go-corner {
+/* .card4:hover .go-corner {
     margin-right: -12px;
 }
 
 .card4:hover .go-arrow {
     opacity: 1;
+} */
+
+.btn {
+    background-color: transparent;
+    position: relative;
+    border: none;
+    width: fit-content;
+    height: fit-content
+}
+
+
+.btn:hover>.icon path {
+    fill: rgb(168, 7, 7);
 }

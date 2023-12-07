@@ -9,20 +9,30 @@ import LoginState from './Context/LoginState';
 import SmartFarm from "./components/SmartFarm"
 import Soilprofiles from './components/Soilprofiles';
 import Profilestate from './Context/Profilestate';
+import TogoState from './Context/TogoState';
+import SmartFertilizer from './components/SmartFertilizer';
+import ProfileidState from './Context/ProfileidState';
+import Newprofile from './components/Newprofile';
 function App() {
   return (
     <BrowserRouter>
       <LoginState>
         <Profilestate>
-          <Navbar />
+          <TogoState>
+            <ProfileidState>
+              <Navbar />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/soilprofile" element={<Soilprofiles />} />
-            <Route path="/smartfarm" element={<SmartFarm />} />
-          </Routes>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/soilprofile" element={<Soilprofiles />} />
+                <Route path="/smartfarm" element={<SmartFarm />} />
+                <Route path="/smartfertilizer" element={<SmartFertilizer />} />
+                <Route path="/newprofile" element={<Newprofile />} />
+              </Routes>
+            </ProfileidState>
+          </TogoState>
         </Profilestate>
       </LoginState>
     </BrowserRouter>

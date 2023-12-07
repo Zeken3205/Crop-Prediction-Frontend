@@ -161,6 +161,19 @@
     color: #4B4B4B;
 }
 
+.feed-form select {
+    height: 54px;
+    border-radius: 5px;
+    background: white;
+    margin-bottom: 15px;
+    border: none;
+    padding: 0 20px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #4B4B4B;
+
+}
+
 .button_submit:hover,
 .feed-form input:hover {
     transform: scale(1.009);
