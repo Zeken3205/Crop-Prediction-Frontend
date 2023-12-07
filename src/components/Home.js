@@ -1,10 +1,16 @@
-import React, { useState, useContext } from 'react'
-import './myStyles.css'
-import TogoContext from '../Context/TogoContext';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Farminganimation from './Farminganimation'
-import Fruitbasketanimation from './fruitbasketanimation'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './myStyles.css';
+import TogoContext from '../Context/TogoContext';
 import Logincontext from '../Context/Logincontext';
+import Farminganimation from './Farminganimation';
+import Fruitbasketanimation from './fruitbasketanimation';
+import SatelliteAnimation from './SatelliteAnimation';
+import TomatoAnimation from './TomatoAnimation';
+import FarmerSmartPhone from './FarmerSmartPhone';
+import Fade from 'react-reveal/Fade';
 function Home() {
     let navigate = useNavigate();
     const logincontext = useContext(Logincontext)
@@ -115,28 +121,68 @@ function Home() {
   </svg>
 `;
     const newSvgDataUri = `data:image/svg+xml;base64,${btoa(newSvgCode)}`;
+    useEffect(() => {
+        AOS.init({ duration: 3000 });
+    }, []);
 
 
     return (
         <div>
-            <div className="green-stripe-container py-56 pl-7 flex justify-between text-center">
-                <div className='flex flex-col w-1/2'>
-                    <h1 className='text-4xl block'>SmartFarmz</h1>
-                    <p className='block'> where innovative technology meets sustainable agriculture.</p>
-                </div>
-                <div className="farming-animation-wrapper flex w-1/2">
-                    <Farminganimation />
-                </div>
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: '90vh', paddingTop: '56px', paddingLeft: '7px', backgroundColor: '#95cfa4', color: '#ecf0f1', borderRadius: '10px', overflow: 'hidden', filter: 'brightness(100%)', transition: 'filter 0.5s ease, background-color 0.5s ease', }}
+                onMouseOver={() => {
+                    document.getElementById('custom-container').style.backgroundColor = '#679c74';
+                }}
+                onMouseOut={() => {
+                    document.getElementById('custom-container').style.backgroundColor = '#95cfa4';
+                }}
+                id="custom-container">
+                <Fade bottom>
+                    <div
+                        style={{ display: 'flex', flexDirection: 'column', width: '50%', padding: '20px', }}>
+                        <Fade bottom>
+                            <h1 style={{ fontSize: '2rem', marginBottom: '10px', paddingLeft: '10rem' }}>Smart Crop Prediction</h1>
+                        </Fade>
+                        <Fade bottom>
+                            <p style={{
+                                fontSize: '1.1rem',
+                                lineHeight: '1.5',
+                                color: 'white',
+                                fontFamily: 'Helvetica, Arial, sans-serif',
+
+                                textAlign: 'center',
+                                textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)',
+                            }}>
+                                Revolutionizing agriculture through a smart crop prediction system that leverages location and soil type data to provide tailored machine learning recommendations for optimal crop selection.
+                            </p>
+                        </Fade>
+                    </div>
+                </Fade>
+                <Fade bottom>
+                    <div
+                        style={{
+                            display: 'flex', width: '50%', overflow: 'hidden', borderRadius: '0 10px 10px 0',
+                        }}
+                    >
+                        <Farminganimation />
+                    </div>
+                </Fade>
             </div>
 
-            <div className="white-stripe-container flex justify-between">
+
+            <div style={{ animation: 'zoom 1500ms', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '65vh', backgroundColor: '#fff', padding: '20px', transition: 'background-color 0.5s ease-in-out' }}
+                onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = '#e0e0da';
+                }}
+                onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = '#fff';
+                }}>
                 <div className="fruitbasketanimation-wrapper">
                     <Fruitbasketanimation />
                 </div>
-                <div className="flex flex-col w-1/2 pr-9 justify-end">
-                    <h1 className="text-4xl block">Lorem</h1>
-                    <p className="block">
-                        Experience the future of farming with our cutting-edge smart irrigation solutions, revolutionizing crop cultivation while conserving precious resources.
+                <div className="animation" data-aos="zoom-in"
+                    style={{ display: 'flex', flexDirection: 'column', width: '50%', paddingRight: '9px', justifyContent: 'flex-end', }}>
+                    <p style={{ fontSize: '1.15rem', lineHeight: '1.6', color: '#333', fontFamily: 'Arial, sans-serif', fontWeight: '400', textAlign: 'justify', textShadow: '1px 1px 1px rgba(0, 0, 0, 0.2)', }}>
+                        Smart crop prediction optimizes agricultural productivity by leveraging data on location and soil types, providing tailored machine learning recommendations for optimal crop selection, thereby ensuring resource efficiency and maximizing yields.
                     </p>
                 </div>
             </div>
@@ -228,8 +274,137 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="white-stripe-container py-52"></div>
-            <div className="color4-stripe-container py-52"></div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    color: '#336699',
+                    justifyContent: 'space-between',
+                    height: '70vh',
+                    paddingTop: '56px',
+                    paddingLeft: '7px',
+                    overflow: 'hidden',
+                    filter: 'brightness(100%)',
+                    transition: 'filter 0.5s ease, background-color 0.5s ease', // Update transition property
+                }}
+                onMouseOver={(event) => {
+                    event.currentTarget.style.backgroundColor = '#336699'; // Hover background color
+                }}
+                onMouseOut={(event) => {
+                    event.currentTarget.style.backgroundColor = '#428bca'; // Initial background color on mouse out
+                }}
+                data-aos="zoom-in" // Add AOS zoom-in effect here
+            >
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '50%',
+                        padding: '20px',
+                        backgroundColor: '#428bca', // Update background color
+                        borderRadius: '10px',
+                        transition: 'background-color 0.5s ease', // Add transition property
+                    }}
+                    data-aos="zoom-in" // Add AOS zoom-in effect here
+                >
+                    <p
+                        style={{
+                            fontSize: '1.1rem',
+                            lineHeight: '1.5',
+                            color: '#ffffff', // Initial text color
+                            fontFamily: 'Montserrat, sans-serif',
+                            textAlign: 'center',
+                            textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)',
+                            padding: '20px',
+                            borderRadius: '10px',
+                        }}
+                    >
+                        Smart crop prediction enhances agricultural efficiency, minimizing resource usage and maximizing yields through data-driven recommendations.
+                    </p>
+                </div>
+                <div
+                    style={{
+                        display: 'flex',
+                        height: '100%',
+                        width: '50%',
+                        overflow: 'hidden',
+                        borderRadius: '0 10px 10px 0',
+                        paddingLeft: '7rem',
+                    }}
+                    data-aos="zoom-in"
+                >
+                    <SatelliteAnimation />
+                </div>
+            </div>
+
+
+
+            <div style={{ animation: 'zoom 1500ms', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '65vh', backgroundColor: '#fff', padding: '20px', transition: 'background-color 0.5s ease-in-out' }}
+                onMouseOver={(evente) => {
+                    evente.currentTarget.style.backgroundColor = '#f2e1b1';
+                }}
+                onMouseOut={(evente) => {
+                    evente.currentTarget.style.backgroundColor = '#fff';
+                }}>
+                <div className="fruitbasketanimation-wrapper">
+                    <FarmerSmartPhone />
+                </div>
+                <div className="animation" data-aos="zoom-in"
+                    style={{ display: 'flex', flexDirection: 'column', width: '50%', paddingRight: '9px', justifyContent: 'flex-end', }}>
+                    <p style={{
+                        fontSize: '1.15rem',
+                        lineHeight: '1.6',
+                        color: '#333',
+                        fontFamily: 'Arial, sans-serif',
+                        fontWeight: '400',
+                        textAlign: 'justify',
+                        textShadow: '1px 1px 1px rgba(0, 0, 0, 0.2)',
+                        display: 'flex',
+                        alignItems: 'center',
+                    }}>
+                        Smart Agriculture is the future, where technology cultivates sustainable and efficient farming practices.
+                    </p>
+
+                </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: '65vh', paddingTop: '56px', paddingLeft: '7px', backgroundColor: '#95cfa4', color: '#ecf0f1', borderRadius: '10px', overflow: 'hidden', filter: 'brightness(100%)', transition: 'filter 0.5s ease, background-color 0.5s ease', }}
+                onMouseOver={() => {
+                    document.getElementById('custom-container').style.backgroundColor = '#679c74';
+                }}
+                onMouseOut={() => {
+                    document.getElementById('custom-container').style.backgroundColor = '#95cfa4';
+                }}
+                id="custom-container">
+                <Fade bottom>
+                    <div
+                        style={{ display: 'flex', flexDirection: 'column', width: '50%', padding: '20px', }}>
+                        <Fade bottom>
+                            <p style={{
+                                fontSize: '1.1rem',
+                                lineHeight: '1.5',
+                                color: 'white',
+                                fontFamily: 'Helvetica, Arial, sans-serif',
+
+                                textAlign: 'center',
+                                textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)',
+                            }}>
+                                Revolutionizing agriculture with smart technologies, ensuring every farmer's <bold>happiness and satisfaction </bold> through sustainable and efficient farming practices.
+                            </p>
+                        </Fade>
+                    </div>
+                </Fade>
+                <Fade bottom>
+                    <div
+                        style={{
+                            display: 'flex', width: '50%', overflow: 'hidden', borderRadius: '0 10px 10px 0',
+                        }}
+                    >
+                        <TomatoAnimation />
+                    </div>
+                </Fade>
+            </div>
 
             <div className="pepermint-stripe-container py-52"></div>
         </div>

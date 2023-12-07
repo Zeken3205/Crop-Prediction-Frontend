@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import LogoAnimation from './Logoanimation';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Logincontext from '../Context/Logincontext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
     const [iconName, setIconName] = useState('menu');
@@ -76,6 +78,7 @@ function Navbar() {
                 </ul>
             </div>
             <div className="flex items-center gap-6">
+            <FontAwesomeIcon icon={faUser} />
                 <button
                     className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]"
                     onClick={logincontext.logincheck ? handlelogout : handlelogin} // Check if logincheck is true
